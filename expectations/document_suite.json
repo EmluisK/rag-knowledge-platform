@@ -1,0 +1,60 @@
+{
+ "expectation_suite_name": "document_chunks_suite",
+ "expectations": [
+ {
+ "expectation_type": "expect_table_to_exist",
+ "kwargs": {},
+ "meta": {}
+ },
+ {
+ "expectation_type": "expect_table_column_count_to_equal",
+ "kwargs": { "value": 8 },
+ "meta": {}
+ },
+ {
+ "expectation_type": "expect_table_columns_to_match_set",
+ "kwargs": {
+ "column_set": ["id", "run_id", "object_name", "chunk_index", "char_start", "chunk_text", "chroma_id", "created_at"]
+ },
+ "meta": {}
+ },
+ {
+ "expectation_type": "expect_column_values_to_not_be_null",
+ "kwargs": { "column": "chunk_text" },
+ "meta": {}
+ },
+ {
+ "expectation_type": "expect_column_values_to_not_be_null",
+ "kwargs": { "column": "object_name" },
+ "meta": {}
+ },
+ {
+ "expectation_type": "expect_column_values_to_not_be_null",
+ "kwargs": { "column": "chroma_id" },
+ "meta": {}
+ },
+ {
+ "expectation_type": "expect_column_values_to_not_be_null",
+ "kwargs": { "column": "run_id" },
+ "meta": {}
+ },
+ {
+ "expectation_type": "expect_column_value_lengths_to_be_between",
+ "kwargs": { "column": "chunk_text", "min_value": 10, "max_value": 2000 },
+ "meta": {}
+ },
+ {
+ "expectation_type": "expect_column_values_to_match_regex",
+ "kwargs": { "column": "object_name", "regex": "^(raw|processed)/" },
+ "meta": {}
+ },
+ {
+ "expectation_type": "expect_column_values_to_be_between",
+ "kwargs": { "column": "chunk_index", "min_value": 0, "max_value": 500 },
+ "meta": {}
+ }
+ ],
+ "meta": {
+ "great_expectations_version": "0.18.12"
+ }
+}
